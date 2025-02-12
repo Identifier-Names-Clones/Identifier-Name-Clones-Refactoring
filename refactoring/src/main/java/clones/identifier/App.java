@@ -44,7 +44,11 @@ public class App {
             public void handle(String commitId, List<Refactoring> refactorings) {
                 System.out.println("Commit: " + commitId);
                 for (Refactoring ref : refactorings) {
-                    System.out.println(ref.toString());
+                    String refType = ref.getName();
+                    // Filter only renaming-related refactorings
+                    if (refType.startsWith("Rename")) {
+                        System.out.println(ref.toString());
+                    }
                 }
             }
         });
