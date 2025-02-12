@@ -46,7 +46,7 @@ public class App {
                 for (Refactoring ref : refactorings) {
                     String refType = ref.getName();
                     // Filter only renaming-related refactorings
-                    if (refType.startsWith("Rename")) {
+                    if (refType.contains("Rename")) {
                         System.out.println(ref.toString());
                     }
                 }
